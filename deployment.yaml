@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xian-springboot-k8s
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: xian-springboot-k8s
+  template:
+    metadata:
+      labels:
+        app: xian-springboot-k8s
+    spec:
+      containers:
+      - name: xian-springboot-k8s
+        image: xian0120/xian-springboot-k8s:latest
+        ports:
+        - containerPort: 8080
